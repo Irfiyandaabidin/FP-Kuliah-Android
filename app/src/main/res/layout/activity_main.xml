@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="10dp">
+
+
+    <RelativeLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rvPromo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/searchLayout">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/promoViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/banner_discount_food"/>
+    </RelativeLayout>
+
+<!--    <HorizontalScrollView-->
+<!--        android:id="@+id/bannerScrollView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="160dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/searchLayout"-->
+<!--        android:layout_marginTop="20dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            &lt;!&ndash; Gantilah dengan sumber daya yang sesuai &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:id="@+id/bannerImageView1"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/banner_discount_food"-->
+<!--                android:scaleType="fitXY"/>-->
+<!--            <ImageView-->
+<!--                android:id="@+id/bannerImageView2"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/banner_discount_food"-->
+<!--                android:scaleType="fitXY"/>-->
+<!--            <ImageView-->
+<!--                android:id="@+id/bannerImageView3"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/banner_discount_food"-->
+<!--                android:scaleType="fitXY"/>-->
+<!--            <ImageView-->
+<!--                android:id="@+id/bannerImageView4"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/banner_discount_food"-->
+<!--                android:scaleType="fitXY"/>-->
+
+
+<!--        </LinearLayout>-->
+<!--    </HorizontalScrollView>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFoods"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/rvPromo"
+        android:nestedScrollingEnabled="false"/>
+
+    <Button
+        android:id="@+id/btnCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="CHECKOUT"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

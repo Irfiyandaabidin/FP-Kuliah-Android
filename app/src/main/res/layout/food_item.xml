@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- ImageView for Image -->
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_launcher_foreground"/>
+
+        <!-- TextView for Name -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/ivImage"
+            android:padding="4dp"/>
+
+        <!-- TextView for Price -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price: $10.99"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@id/tvName"
+            />
+
+        <!-- RatingBar for Rating -->
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPrice"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="8dp"
+            style="?android:attr/ratingBarStyleSmall"
+            android:numStars="1"
+            android:rating="4.0"
+            android:isIndicator="true"/>
+
+        <!-- TextView for Rating Text -->
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.0"
+            android:layout_below="@id/tvPrice"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:layout_below="@+id/tvRating"/>
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_below="@+id/tvRating"
+                android:layout_toEndOf="@+id/btnAdd"
+                android:layout_marginStart="8dp"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

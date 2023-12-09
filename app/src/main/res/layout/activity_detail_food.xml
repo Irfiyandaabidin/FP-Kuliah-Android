@@ -1,0 +1,47 @@
+<!-- res/layout/activity_main.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/titleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Menu"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_marginVertical="20dp"/>
+
+    <!-- Gambar di tengah atas -->
+    <ImageView
+        android:layout_below="@+id/titleDetail"
+        android:id="@+id/ivDetailImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Nama di bawah gambar -->
+    <TextView
+        android:id="@+id/tvNameDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rendang"
+        android:layout_below="@id/ivDetailImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Deskripsi di bawah nama -->
+    <TextView
+        android:id="@+id/tvDescriptionDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi tentang Rendang"
+        android:layout_below="@id/tvNameDetail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"/>
+</RelativeLayout>
