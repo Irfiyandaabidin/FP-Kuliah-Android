@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     AppDatabase database;
     TextView tvName, tvPrice;
 
+
     private static final short DELAY_MS = 3000;
     private static final short PERIOD_MS = 3000;
     List<FoodModel> elements;
@@ -45,12 +47,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         promoViewPager = findViewById(R.id.promoViewPager);
         btnCheckout = findViewById(R.id.btnCheckout);
         database = AppDatabase.getInstance(getApplicationContext());
 
         // Gantilah dengan sumber daya gambar yang sesuai
-        int[] promoImages = {R.drawable.banner_discount_food, R.drawable.banner_discount_food, R.drawable.banner_discount_food};
+        int[] promoImages = {R.drawable.banner_discount_food, R.drawable.banner_iklan2, R.drawable.banner_iklan3};
 
         PromoPagerAdapter promoPagerAdapter = new PromoPagerAdapter(this, promoImages);
         promoViewPager.setAdapter(promoPagerAdapter);
@@ -86,20 +89,21 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         SearchView searchView = findViewById(R.id.searchView);
         searchView.setOnQueryTextListener(this);
     }
+
 //        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.item_spacing);
 
 
     private void addData() {
         elements = new ArrayList<>();
-        elements.add(new FoodModel("Rendang1", "20000", "4", R.drawable.rendang, "Description rendang"));
-        elements.add(new FoodModel("Mie Ayam", "10000", "5", R.drawable.mieayam, "Description Mie ayam"));
-        elements.add(new FoodModel("Baso", "120000", "4", R.drawable.baso, "Description baso"));
-        elements.add(new FoodModel("Rendang", "20000", "4", R.drawable.rendang, "Description rendang"));
-        elements.add(new FoodModel("Mie Ayam", "10000", "5", R.drawable.mieayam, "Description Mie ayam"));
-        elements.add(new FoodModel("Baso", "120000", "4", R.drawable.baso, "Description baso"));
-        elements.add(new FoodModel("Rendang", "20000", "4", R.drawable.rendang, "Description rendang"));
-        elements.add(new FoodModel("Mie Ayam", "10000", "5", R.drawable.mieayam, "Description Mie ayam"));
-        elements.add(new FoodModel("Baso", "120000", "4", R.drawable.baso, "Description baso"));
+        elements.add(new FoodModel("Rendang1", "20000", "4", R.drawable.rendang, R.string.dtRendang));
+        elements.add(new FoodModel("Mie Ayam", "10000", "5", R.drawable.mieayam, R.string.dtRendang));
+        elements.add(new FoodModel("Baso", "120000", "4", R.drawable.baso, R.string.dtRendang));
+        elements.add(new FoodModel("Rendang", "20000", "4", R.drawable.rendang, R.string.dtRendang));
+        elements.add(new FoodModel("Mie Ayam", "10000", "5", R.drawable.mieayam, R.string.dtRendang));
+        elements.add(new FoodModel("Baso", "120000", "4", R.drawable.baso, R.string.dtRendang));
+        elements.add(new FoodModel("Rendang", "20000", "4", R.drawable.rendang, R.string.dtRendang));
+        elements.add(new FoodModel("Mie Ayam", "10000", "5", R.drawable.mieayam, R.string.dtRendang));
+        elements.add(new FoodModel("Baso", "120000", "4", R.drawable.baso, R.string.dtRendang));
 
         adapter = new FoodAdapter(elements, this, new FoodAdapter.OnItemClickListener(){
             @Override
@@ -161,6 +165,5 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             }
         }
     }
-
 
 }

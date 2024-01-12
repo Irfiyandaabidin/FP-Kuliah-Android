@@ -1,5 +1,7 @@
 package com.example.finalproject;
 
+import android.widget.TextView;
+
 import java.io.Serializable;
 
 public class FoodModel implements Serializable {
@@ -7,15 +9,16 @@ public class FoodModel implements Serializable {
     public String price;
     public String rating;
     public Integer imageResourceId;
+    public TextView tvJumlah;
 
     public String description;
 
-    public FoodModel(String name, String price, String rating, int imageResourceId, String description) {
+    public FoodModel(String name, String price, String rating, int imageResourceId, int description) {
         this.name = name;
         this.price = price;
         this.rating = rating;
         this.imageResourceId = imageResourceId;
-        this.description = description;
+        this.description = String.valueOf(description);
     }
 
     public int getImageResourceId() {

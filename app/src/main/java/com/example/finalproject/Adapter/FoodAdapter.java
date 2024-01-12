@@ -24,6 +24,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     private List<FoodModel> foodList;
     private Context context;
     final OnItemClickListener listener;
+    private TextView tvJumlah;
+    private int jumlahProduk = 0;
 
     public FoodAdapter(List<FoodModel> foodList, Context context, OnItemClickListener listener) {
         this.mInflater = LayoutInflater.from(context);
@@ -37,6 +39,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.food_item, parent, false);
         return new FoodViewHolder(view);
+
     }
 
     @Override
@@ -128,5 +131,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     public void filterList(List<FoodModel> filteredList) {
         this.foodList = filteredList;
         notifyDataSetChanged();
+    }
+    private void updateJumlahProduk() {
+
+        tvJumlah.setText(String.valueOf(jumlahProduk));
     }
 }
